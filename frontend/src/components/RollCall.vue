@@ -24,6 +24,10 @@ const loadNames = async () => {
 const rollcall = () => {
     if (data.isRolling) return; // 防止重复点击
     loadNames()
+    if (!data || !Array.isArray(data.elements) || data.elements.length <= 0) {
+        console.error("数据错误，请先加载名字列表");
+        return;
+    }
     // console.log(data.elements.length)
     // console.log(data.elements)
 
